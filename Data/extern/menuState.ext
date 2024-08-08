@@ -1,0 +1,14 @@
+/*****************************************************************************/
+/*  Author        : Дракончик												 */
+/*  Machine       : Desktop-PC      										 */
+/*  OS		  	  : Ubuntu 20.04											 */
+/*  Language      : GNU C                                                    */
+/*                                                                           */
+/*  File Contents : MAIN MENU FOR STARING NEW GAME LOADING AND SHUT DOWN     */
+/*  File Attribute: EXTERNAL                                                 */
+/*  File Name     : menuState.ext                                            */
+/*                                                                           */
+/*****************************************************************************/
+
+extern StateMachine GameMachineState;
+

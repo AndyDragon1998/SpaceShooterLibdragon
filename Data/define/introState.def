@@ -1,0 +1,13 @@
+/*****************************************************************************/
+/*  Author        : Дракончик												 */
+/*  Machine       : Nintendo 64      										 */
+/*  Library		  : Libdragon												 */
+/*  Language      : GNU C                                                    */
+/*                                                                           */
+/*  File Contents : Define variables such as file paths and constants        */
+/*  File Attribute: DEFINED                                                  */
+/*  File Name     : introState.def                                           */
+/*                                                                           */
+/*****************************************************************************/
+#define INTROIMAGEPATH "Graphics/Images/Intro.sprite"
+#define TESTYIMAGEPATH "Graphics/test.sprite"

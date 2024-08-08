@@ -1,0 +1,18 @@
+/*****************************************************************************/
+/*  Author        : Дракончик												 */
+/*  Machine       : Desktop-PC      										 */
+/*  OS		  	  : Ubuntu 20.04											 */
+/*  Language      : GNU C                                                    */
+/*                                                                           */
+/*  File Contents : MAIN MENU FOR STARING NEW GAME LOADING AND SHUT DOWN     */
+/*  File Attribute: DEFINED                                                  */
+/*  File Name     : menuState.def                                            */
+/*                                                                           */
+/*****************************************************************************/
+
+
+#define TITLEIMAGEPATH "Graphics/Images/Title.png"
+
+#define TEXTYIMAGEPATH "Graphics/Images/Texty.png"
+
+#define MENUYAUDIOPATH "Audio/BGM/TitleScreenResample.wav"
