@@ -10,4 +10,4 @@
 /*                                                                           */
 /*****************************************************************************/
 #define INTROIMAGEPATH "Graphics/Images/Intro.sprite"
-#define TESTYIMAGEPATH "Graphics/test.sprite"
+#define TESTYIMAGEPATH "/Graphics/test.sprite"
