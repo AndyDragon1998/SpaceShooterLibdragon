@@ -37,10 +37,7 @@ sprite_t *IntroSprite;
 void IntroStart()
 {
 	// Loading sprites in memory
-    int fp = dfs_open(TESTYIMAGEPATH);
-    IntroSprite = malloc(dfs_size(fp));
-    dfs_read( IntroSprite, 1, dfs_size(fp),fp);
-    dfs_close(fp);
+    IntroSprite = sprite_load("rom:/Graphics/Images/Intro.sprite");
 }
 
 void IntroUpdate()
@@ -50,19 +47,10 @@ void IntroUpdate()
 
 void IntroDraw()
 {
- 	surface_t* disp = display_get();
-       
-    /*Fill the screen */
-    graphics_fill_screen( disp, 0xFFFFFFFF );
+ 	// Attach and clear the screen
+    surface_t *disp = display_get();
+    rdpq_attach_clear(disp, NULL);
 
-    /* Set the text output color */
-	graphics_set_color( 0x0, 0xFFFFFFFF );
-	
-	/* Display a stationary sprite to demonstrate backwards compatibility */
-    graphics_draw_sprite_trans( disp, 50, 50, IntroSprite );
-
-	/* Force backbuffer flip */
-    display_show(disp);
 }
 
 void IntroEnd()

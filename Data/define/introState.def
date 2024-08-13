@@ -9,5 +9,4 @@
 /*  File Name     : introState.def                                           */
 /*                                                                           */
 /*****************************************************************************/
-#define INTROIMAGEPATH "Graphics/Images/Intro.sprite"
-#define TESTYIMAGEPATH "/Graphics/test.sprite"
+#define INTROIMAGEPATH "rom:/Images/Intro.sprite"
