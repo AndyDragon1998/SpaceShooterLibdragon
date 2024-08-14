@@ -37,7 +37,7 @@ sprite_t *IntroSprite;
 void IntroStart()
 {
 	// Loading sprites in memory
-    IntroSprite = sprite_load("rom:/Graphics/Images/Intro.sprite");
+    IntroSprite = sprite_load("rom:/Intro.sprite");
 }
 
 void IntroUpdate()
