@@ -47,10 +47,8 @@ void IntroUpdate()
 
 void IntroDraw()
 {
- 	// Attach and clear the screen
-    surface_t *disp = display_get();
-    rdpq_attach_clear(disp, NULL);
-
+ 	rdpq_set_mode_copy(true);
+	rdpq_sprite_blit(IntroSprite, 0, 0, NULL);
 }
 
 void IntroEnd()
