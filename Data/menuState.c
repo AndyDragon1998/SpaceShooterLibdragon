@@ -34,11 +34,14 @@ void MenuStart()
 	MenuSprite = sprite_load("rom:/Graphics/Images/Title.sprite");
 	
 	wav64_open(&MenuMusic, "rom:/Audio/BGM/SpaceBass.wav64");
+	mixer_ch_set_freq(0, MenuMusic.wave.frequency);
+	
+	wav64_play(&MenuMusic, 0);
 }
 
 void MenuUpdate()
 {
-	wav64_play(&MenuMusic, 0);
+	
 }
 
 void MenuDraw()
