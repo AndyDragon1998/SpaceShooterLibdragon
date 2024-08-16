@@ -44,11 +44,17 @@ surface_t* mainDisplay;
 
 int main(void)
 {
-    /* Initialize peripherals */
+    //Initialize Screen
     display_init( RESOLUTION_320x240, DEPTH_16_BPP, 2, GAMMA_NONE, FILTERS_RESAMPLE );
     rdpq_init();
+    
+    // Initializing File System
     dfs_init(DFS_DEFAULT_LOCATION);
 
+	// Initializing Audio
+	audio_init(44100, 20);
+	mixer_init(32);
+	mixer_ch_set_limits(6, 0, 128000, 0);
 
 	StateMachineStart(&GameMachineState, &IntroState);
     while(1) 
@@ -70,5 +76,18 @@ int main(void)
 		
 		// Send frame buffer to display (TV)
 		rdpq_detach_show();
+		
+		if (audio_can_write()) 
+		{
+		// Select an audio buffer that we can write to
+		short *buf = audio_write_begin();
+		
+		// Write to the audio buffer from the mixer
+		mixer_poll(buf, audio_get_buffer_length());
+		
+		// Tell the audio system that the buffer has
+		// been filled and is ready for playback
+		audio_write_end();
+	}
     }
 }

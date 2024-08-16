@@ -33,16 +33,23 @@
 // sprite variables
 sprite_t *IntroSprite;
 
+int introTimer;
 
 void IntroStart()
 {
 	// Loading sprites in memory
     IntroSprite = sprite_load("rom:/Intro.sprite");
+    introTimer = 0;
 }
 
 void IntroUpdate()
 {
-
+	introTimer++;
+	
+	if(introTimer > 300)
+	{
+		StateMachineChange(&GameMachineState, &MenuState);
+	}
 }
 
 void IntroDraw()
