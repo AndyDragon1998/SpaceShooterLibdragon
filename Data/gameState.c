@@ -14,6 +14,11 @@
 #include "include/menuState.h"
 #include "include/overState.h"
 #include "include/introState.h"
+#include "include/starfield.h"
+#include "include/entities.h"
+
+#include <stdbool.h>
+#include <libdragon.h>
 
 
 /****** User External Files ********/
@@ -25,25 +30,39 @@
 /****** User Define Files ***********/
 #include "define/gameState.def"
 
+bool GameOverBoolean;
+
+wav64_t GameMusic;
 
 void GameStart()
 {
-
+	initializeStarfield();
+	initializeEntities();
+	
+	wav64_open(&GameMusic, "rom:/Audio/BGM/Labyrinth-of-Time.wav64");
+	mixer_ch_set_freq(0, GameMusic.wave.frequency);
+	
+	wav64_play(&GameMusic, 0);
+	
 }
 
 void GameUpdate()
 {
-
+	updateStarfield();
+	UpdateInput();
+	updateEntities();
 }
 
 void GameDraw()
 {
-
+	rdpq_set_mode_copy(true);
+	drawStarfield();
+	drawEntities();
 }
 
 void GameEnd()
 {
-
+	
 }
 
 StateManager GameState =

@@ -46,7 +46,7 @@ $(RES_DIR)/Audio/BGM/%.wav64: Audio/BGM/%.wav
 	@mkdir -p $(dir $@)
 	@$(N64_AUDIOCONV) $(AUDIOCONV_FLAGS) -o $(RES_DIR)/Audio/BGM "$<"
 	
-OBJS = $(BUILD_DIR)/main.o Data/stateManager.o Data/introState.o Data/menuState.o Data/gameState.o Data/overState.o
+OBJS = $(BUILD_DIR)/main.o Data/stateManager.o Data/introState.o Data/menuState.o Data/gameState.o Data/overState.o Data/starfield.o Data/input.o Data/entities.o
 
 $(BUILD_DIR)/$(NAME).dfs: $(RES_DIR)/Intro.sprite $(Background_conv) $(Image_conv) $(Sprite_conv) $(BGM_conv)
 

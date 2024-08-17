@@ -60,7 +60,8 @@ void IntroDraw()
 
 void IntroEnd()
 {
-
+	// clears the memory from images
+	sprite_free(IntroSprite);
 }
 
 StateManager IntroState =

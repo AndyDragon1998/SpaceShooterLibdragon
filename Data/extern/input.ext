@@ -1,0 +1,16 @@
+/*****************************************************************************/
+/*  Author        : Дракончик												 */
+/*  Machine       : Nintendo 64      										 */
+/*  Library		  : Libdragon												 */
+/*  Language      : GNU C                                                    */
+/*                                                                           */
+/*  File Contents : Game pad input data structs shared to all other files    */
+/*  File Attribute: EXTERNAL                                                 */
+/*  File Name     : input.ext                                         		 */
+/*                                                                           */
+/*****************************************************************************/
+
+extern ControllerInput pad1;
+extern ControllerInput pad2;
+extern ControllerInput pad3;
+extern ControllerInput pad4;

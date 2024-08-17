@@ -22,6 +22,8 @@
 #include "Data/include/gameState.h"
 #include "Data/include/overState.h"
 
+#include "Data/include/input.h"
+
 StateMachine GameMachineState;
 
 char *format_type( int accessory )
@@ -45,9 +47,9 @@ surface_t* mainDisplay;
 int main(void)
 {
     //Initialize Screen
-    display_init( RESOLUTION_320x240, DEPTH_16_BPP, 2, GAMMA_NONE, FILTERS_RESAMPLE );
+    display_init( RESOLUTION_640x480, DEPTH_16_BPP, 2, GAMMA_NONE, FILTERS_RESAMPLE );
     rdpq_init();
-    
+    controller_init();
     // Initializing File System
     dfs_init(DFS_DEFAULT_LOCATION);
 
@@ -62,6 +64,7 @@ int main(void)
     
     	while(!(mainDisplay = display_try_get()));
     	
+    	inputUpdate();
     	
     	StateMachineUpdate(&GameMachineState);
     	
