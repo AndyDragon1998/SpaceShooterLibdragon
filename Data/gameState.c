@@ -43,6 +43,7 @@ void GameStart()
 	mixer_ch_set_freq(0, GameMusic.wave.frequency);
 	
 	wav64_play(&GameMusic, 0);
+	GameOverBoolean = false;
 	
 }
 
@@ -51,6 +52,11 @@ void GameUpdate()
 	updateStarfield();
 	UpdateInput();
 	updateEntities();
+	
+	if(GameOverBoolean == true)
+	{
+		StateMachineChange(&GameMachineState, &OverState);
+	}
 }
 
 void GameDraw()
