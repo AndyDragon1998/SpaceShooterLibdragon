@@ -89,7 +89,7 @@ void updateEntities()
 	}
 
 	
-	if(player.shoot)
+	if(player.shoot && !(currentBulletCount > MAX_BULLET_COUNT))
 	{
 		//PlaySoundEffect(&Shoot, BulletChannels);
 		
@@ -176,7 +176,7 @@ void drawEntities()
 		rdpq_sprite_blit(asteroidSprite,asteroidArray[i].X,asteroidArray[i].Y,NULL);
 	}
 	// Loop for drawing player Bullets
-	for(int i = 0; i < currentAsteroidCount; i++)
+	for(int i = 0; i < currentBulletCount; i++)
 	{
 		rdpq_sprite_blit(bulletSprite,bulletArray[i].X,bulletArray[i].Y,NULL);
 	}

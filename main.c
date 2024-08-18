@@ -54,7 +54,7 @@ int main(void)
     dfs_init(DFS_DEFAULT_LOCATION);
 
 	// Initializing Audio
-	audio_init(44100, 20);
+	audio_init(44100, 3);
 	mixer_init(32);
 	mixer_ch_set_limits(6, 0, 128000, 0);
 
